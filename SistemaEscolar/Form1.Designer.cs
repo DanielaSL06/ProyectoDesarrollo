@@ -41,7 +41,6 @@
             this.btnEstatus = new System.Windows.Forms.ToolStripButton();
             this.btnGrupo = new System.Windows.Forms.ToolStripButton();
             this.btnReinscripcion = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +61,7 @@
             this.btnReinscripcion});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(926, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(961, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -154,21 +153,14 @@
             this.btnReinscripcion.Size = new System.Drawing.Size(121, 24);
             this.btnReinscripcion.Text = "Reinscripción";
             // 
-            // toolStrip2
-            // 
-            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip2.Location = new System.Drawing.Point(0, 27);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(926, 25);
-            this.toolStrip2.TabIndex = 1;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 450);
-            this.Controls.Add(this.toolStrip2);
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(961, 450);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "Página Principal";
@@ -193,7 +185,6 @@
         private System.Windows.Forms.ToolStripButton btnEstatus;
         private System.Windows.Forms.ToolStripButton btnGrupo;
         private System.Windows.Forms.ToolStripButton btnReinscripcion;
-        private System.Windows.Forms.ToolStrip toolStrip2;
     }
 }
 

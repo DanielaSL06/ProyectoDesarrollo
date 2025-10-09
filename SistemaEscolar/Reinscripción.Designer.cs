@@ -1,6 +1,6 @@
 ﻿namespace SistemaEscolar
 {
-    partial class Carrera
+    partial class Reinscripción
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Carrera));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reinscripción));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
@@ -36,10 +36,10 @@
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.siglas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNombreCarrera = new System.Windows.Forms.TextBox();
-            this.txtSiglasCarrera = new System.Windows.Forms.TextBox();
+            this.id_grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calificación = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCalificaciónReinscripcion = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             this.btnSalir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(533, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(714, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -96,13 +96,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.nombre,
-            this.siglas});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 55);
+            this.id_grupo,
+            this.id_alumno,
+            this.calificación});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(470, 264);
+            this.dataGridView1.Size = new System.Drawing.Size(658, 260);
             this.dataGridView1.TabIndex = 1;
             // 
             // id
@@ -112,48 +113,48 @@
             this.id.Name = "id";
             this.id.Width = 125;
             // 
-            // nombre
+            // id_grupo
             // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 125;
+            this.id_grupo.HeaderText = "ID Grupo";
+            this.id_grupo.MinimumWidth = 6;
+            this.id_grupo.Name = "id_grupo";
+            this.id_grupo.Width = 125;
             // 
-            // siglas
+            // id_alumno
             // 
-            this.siglas.HeaderText = "Siglas";
-            this.siglas.MinimumWidth = 6;
-            this.siglas.Name = "siglas";
-            this.siglas.Width = 125;
+            this.id_alumno.HeaderText = "ID Alumno";
+            this.id_alumno.MinimumWidth = 6;
+            this.id_alumno.Name = "id_alumno";
+            this.id_alumno.Width = 125;
             // 
-            // txtNombreCarrera
+            // calificación
             // 
-            this.txtNombreCarrera.Location = new System.Drawing.Point(52, 372);
-            this.txtNombreCarrera.Name = "txtNombreCarrera";
-            this.txtNombreCarrera.Size = new System.Drawing.Size(100, 22);
-            this.txtNombreCarrera.TabIndex = 2;
-            this.txtNombreCarrera.Text = "Nombre";
+            this.calificación.HeaderText = "Calificación";
+            this.calificación.MinimumWidth = 6;
+            this.calificación.Name = "calificación";
+            this.calificación.Width = 125;
             // 
-            // txtSiglasCarrera
+            // txtCalificaciónReinscripcion
             // 
-            this.txtSiglasCarrera.Location = new System.Drawing.Point(264, 372);
-            this.txtSiglasCarrera.Name = "txtSiglasCarrera";
-            this.txtSiglasCarrera.Size = new System.Drawing.Size(100, 22);
-            this.txtSiglasCarrera.TabIndex = 3;
-            this.txtSiglasCarrera.Text = "Siglas";
+            this.txtCalificaciónReinscripcion.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtCalificaciónReinscripcion.Location = new System.Drawing.Point(12, 339);
+            this.txtCalificaciónReinscripcion.Name = "txtCalificaciónReinscripcion";
+            this.txtCalificaciónReinscripcion.Size = new System.Drawing.Size(100, 22);
+            this.txtCalificaciónReinscripcion.TabIndex = 2;
+            this.txtCalificaciónReinscripcion.Text = "Calificación";
             // 
-            // Carrera
+            // Reinscripción
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(533, 450);
-            this.Controls.Add(this.txtSiglasCarrera);
-            this.Controls.Add(this.txtNombreCarrera);
+            this.ClientSize = new System.Drawing.Size(714, 450);
+            this.Controls.Add(this.txtCalificaciónReinscripcion);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "Carrera";
-            this.Text = "Carrera";
+            this.Name = "Reinscripción";
+            this.Text = "Reinscripción";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -171,9 +172,9 @@
         private System.Windows.Forms.ToolStripButton btnSalir;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn siglas;
-        private System.Windows.Forms.TextBox txtNombreCarrera;
-        private System.Windows.Forms.TextBox txtSiglasCarrera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_grupo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_alumno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calificación;
+        private System.Windows.Forms.TextBox txtCalificaciónReinscripcion;
     }
 }
