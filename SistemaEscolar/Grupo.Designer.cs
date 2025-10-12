@@ -34,20 +34,18 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maestro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtAlumnoGrupo = new System.Windows.Forms.TextBox();
-            this.txtMaestroGrupo = new System.Windows.Forms.TextBox();
-            this.txtAulaGrupo = new System.Windows.Forms.TextBox();
-            this.txtHorarioGrupo = new System.Windows.Forms.TextBox();
-            this.txtCarreraGrupo = new System.Windows.Forms.TextBox();
+            this.dgvGrupos = new System.Windows.Forms.DataGridView();
+            this.cbAlumno = new System.Windows.Forms.ComboBox();
+            this.cbCarrera = new System.Windows.Forms.ComboBox();
+            this.cbMaestro = new System.Windows.Forms.ComboBox();
+            this.cbAula = new System.Windows.Forms.ComboBox();
+            this.cbHorario = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrupos)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -71,6 +69,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 24);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -79,6 +78,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(72, 24);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -87,6 +87,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(87, 24);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -95,106 +96,102 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(62, 24);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dataGridView1
+            // dgvGrupos
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.alumno,
-            this.maestro,
-            this.aula,
-            this.horario,
-            this.carrera});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 30);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(824, 236);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvGrupos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvGrupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrupos.Location = new System.Drawing.Point(32, 46);
+            this.dgvGrupos.Name = "dgvGrupos";
+            this.dgvGrupos.RowHeadersWidth = 51;
+            this.dgvGrupos.RowTemplate.Height = 24;
+            this.dgvGrupos.Size = new System.Drawing.Size(824, 236);
+            this.dgvGrupos.TabIndex = 1;
+            this.dgvGrupos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrupos_CellContentClick);
+            this.dgvGrupos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrupos_CellContentClick);
             // 
-            // id
+            // cbAlumno
             // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
+            this.cbAlumno.FormattingEnabled = true;
+            this.cbAlumno.Location = new System.Drawing.Point(143, 310);
+            this.cbAlumno.Name = "cbAlumno";
+            this.cbAlumno.Size = new System.Drawing.Size(121, 24);
+            this.cbAlumno.TabIndex = 7;
+            this.cbAlumno.Text = "Alumno";
             // 
-            // alumno
+            // cbCarrera
             // 
-            this.alumno.HeaderText = "Alumno";
-            this.alumno.MinimumWidth = 6;
-            this.alumno.Name = "alumno";
-            this.alumno.Width = 125;
+            this.cbCarrera.FormattingEnabled = true;
+            this.cbCarrera.Location = new System.Drawing.Point(448, 391);
+            this.cbCarrera.Name = "cbCarrera";
+            this.cbCarrera.Size = new System.Drawing.Size(121, 24);
+            this.cbCarrera.TabIndex = 8;
+            this.cbCarrera.Text = "Carrera";
             // 
-            // maestro
+            // cbMaestro
             // 
-            this.maestro.HeaderText = "Maestro";
-            this.maestro.MinimumWidth = 6;
-            this.maestro.Name = "maestro";
-            this.maestro.Width = 125;
+            this.cbMaestro.FormattingEnabled = true;
+            this.cbMaestro.Location = new System.Drawing.Point(143, 391);
+            this.cbMaestro.Name = "cbMaestro";
+            this.cbMaestro.Size = new System.Drawing.Size(121, 24);
+            this.cbMaestro.TabIndex = 9;
+            this.cbMaestro.Text = "Maestro";
             // 
-            // aula
+            // cbAula
             // 
-            this.aula.HeaderText = "Aula";
-            this.aula.MinimumWidth = 6;
-            this.aula.Name = "aula";
-            this.aula.Width = 125;
+            this.cbAula.FormattingEnabled = true;
+            this.cbAula.Location = new System.Drawing.Point(448, 310);
+            this.cbAula.Name = "cbAula";
+            this.cbAula.Size = new System.Drawing.Size(121, 24);
+            this.cbAula.TabIndex = 10;
+            this.cbAula.Text = "Aula";
             // 
-            // horario
+            // cbHorario
             // 
-            this.horario.HeaderText = "Horario";
-            this.horario.MinimumWidth = 6;
-            this.horario.Name = "horario";
-            this.horario.Width = 125;
+            this.cbHorario.FormattingEnabled = true;
+            this.cbHorario.Location = new System.Drawing.Point(695, 310);
+            this.cbHorario.Name = "cbHorario";
+            this.cbHorario.Size = new System.Drawing.Size(121, 24);
+            this.cbHorario.TabIndex = 11;
+            this.cbHorario.Text = "Horario";
             // 
-            // carrera
+            // label1
             // 
-            this.carrera.HeaderText = "Carrera";
-            this.carrera.MinimumWidth = 6;
-            this.carrera.Name = "carrera";
-            this.carrera.Width = 125;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(72, 313);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Alumno:";
             // 
-            // txtAlumnoGrupo
+            // label2
             // 
-            this.txtAlumnoGrupo.Location = new System.Drawing.Point(62, 310);
-            this.txtAlumnoGrupo.Name = "txtAlumnoGrupo";
-            this.txtAlumnoGrupo.Size = new System.Drawing.Size(100, 22);
-            this.txtAlumnoGrupo.TabIndex = 2;
-            this.txtAlumnoGrupo.Text = "Alumno";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(375, 394);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 16);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Carrera:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // txtMaestroGrupo
+            // label3
             // 
-            this.txtMaestroGrupo.Location = new System.Drawing.Point(62, 393);
-            this.txtMaestroGrupo.Name = "txtMaestroGrupo";
-            this.txtMaestroGrupo.Size = new System.Drawing.Size(100, 22);
-            this.txtMaestroGrupo.TabIndex = 3;
-            this.txtMaestroGrupo.Text = "Maestro";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(72, 394);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Maestro:";
             // 
-            // txtAulaGrupo
+            // label4
             // 
-            this.txtAulaGrupo.Location = new System.Drawing.Point(363, 310);
-            this.txtAulaGrupo.Name = "txtAulaGrupo";
-            this.txtAulaGrupo.Size = new System.Drawing.Size(100, 22);
-            this.txtAulaGrupo.TabIndex = 4;
-            this.txtAulaGrupo.Text = "Aula";
-            // 
-            // txtHorarioGrupo
-            // 
-            this.txtHorarioGrupo.Location = new System.Drawing.Point(363, 393);
-            this.txtHorarioGrupo.Name = "txtHorarioGrupo";
-            this.txtHorarioGrupo.Size = new System.Drawing.Size(100, 22);
-            this.txtHorarioGrupo.TabIndex = 5;
-            this.txtHorarioGrupo.Text = "Horario";
-            // 
-            // txtCarreraGrupo
-            // 
-            this.txtCarreraGrupo.Location = new System.Drawing.Point(649, 310);
-            this.txtCarreraGrupo.Name = "txtCarreraGrupo";
-            this.txtCarreraGrupo.Size = new System.Drawing.Size(100, 22);
-            this.txtCarreraGrupo.TabIndex = 6;
-            this.txtCarreraGrupo.Text = "Carrera";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(375, 313);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 16);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Aula: ";
             // 
             // Grupo
             // 
@@ -202,18 +199,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(896, 450);
-            this.Controls.Add(this.txtCarreraGrupo);
-            this.Controls.Add(this.txtHorarioGrupo);
-            this.Controls.Add(this.txtAulaGrupo);
-            this.Controls.Add(this.txtMaestroGrupo);
-            this.Controls.Add(this.txtAlumnoGrupo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbHorario);
+            this.Controls.Add(this.cbAula);
+            this.Controls.Add(this.cbMaestro);
+            this.Controls.Add(this.cbCarrera);
+            this.Controls.Add(this.cbAlumno);
+            this.Controls.Add(this.dgvGrupos);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Grupo";
             this.Text = "Grupo";
+            this.Load += new System.EventHandler(this.Grupo_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrupos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,17 +228,15 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnSalir;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alumno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maestro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carrera;
-        private System.Windows.Forms.TextBox txtAlumnoGrupo;
-        private System.Windows.Forms.TextBox txtMaestroGrupo;
-        private System.Windows.Forms.TextBox txtAulaGrupo;
-        private System.Windows.Forms.TextBox txtHorarioGrupo;
-        private System.Windows.Forms.TextBox txtCarreraGrupo;
+        private System.Windows.Forms.DataGridView dgvGrupos;
+        private System.Windows.Forms.ComboBox cbAlumno;
+        private System.Windows.Forms.ComboBox cbCarrera;
+        private System.Windows.Forms.ComboBox cbMaestro;
+        private System.Windows.Forms.ComboBox cbAula;
+        private System.Windows.Forms.ComboBox cbHorario;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

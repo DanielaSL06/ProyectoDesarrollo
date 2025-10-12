@@ -148,6 +148,7 @@
             // 
             // btnGrupo
             // 
+            this.btnGrupo.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnGrupo.Image")));
             this.btnGrupo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGrupo.Name = "btnGrupo";
@@ -157,6 +158,7 @@
             // 
             // btnReinscripcion
             // 
+            this.btnReinscripcion.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnReinscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnReinscripcion.Image")));
             this.btnReinscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnReinscripcion.Name = "btnReinscripcion";
@@ -175,6 +177,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "Página Principal";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
