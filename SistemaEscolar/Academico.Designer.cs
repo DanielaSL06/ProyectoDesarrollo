@@ -34,16 +34,12 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAcademico = new System.Windows.Forms.DataGridView();
             this.txtNombreAcademicos = new System.Windows.Forms.TextBox();
             this.txtApellidosAcademicos = new System.Windows.Forms.TextBox();
             this.txtGradoAcademico = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAcademico)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -67,6 +63,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 24);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -75,6 +72,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(72, 24);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -83,6 +81,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(87, 24);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -91,50 +90,20 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(62, 24);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dataGridView1
+            // dgvAcademico
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.nombre,
-            this.apellidos,
-            this.grado});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 44);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(592, 272);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 125;
-            // 
-            // apellidos
-            // 
-            this.apellidos.HeaderText = "Apellidos";
-            this.apellidos.MinimumWidth = 6;
-            this.apellidos.Name = "apellidos";
-            this.apellidos.Width = 125;
-            // 
-            // grado
-            // 
-            this.grado.HeaderText = "Grado";
-            this.grado.MinimumWidth = 6;
-            this.grado.Name = "grado";
-            this.grado.Width = 125;
+            this.dgvAcademico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvAcademico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAcademico.Location = new System.Drawing.Point(28, 44);
+            this.dgvAcademico.Name = "dgvAcademico";
+            this.dgvAcademico.RowHeadersWidth = 51;
+            this.dgvAcademico.RowTemplate.Height = 24;
+            this.dgvAcademico.Size = new System.Drawing.Size(592, 272);
+            this.dgvAcademico.TabIndex = 1;
+            this.dgvAcademico.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAcademico_CellContentClick);
+            this.dgvAcademico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAcademico_CellContentClick);
             // 
             // txtNombreAcademicos
             // 
@@ -169,13 +138,13 @@
             this.Controls.Add(this.txtGradoAcademico);
             this.Controls.Add(this.txtApellidosAcademicos);
             this.Controls.Add(this.txtNombreAcademicos);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvAcademico);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Academico";
             this.Text = "Academico";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAcademico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,11 +157,7 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnSalir;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grado;
+        private System.Windows.Forms.DataGridView dgvAcademico;
         private System.Windows.Forms.TextBox txtNombreAcademicos;
         private System.Windows.Forms.TextBox txtApellidosAcademicos;
         private System.Windows.Forms.TextBox txtGradoAcademico;

@@ -34,18 +34,13 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.Eliminar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Aaula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.piso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CapacidadMaxima = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAula = new System.Windows.Forms.DataGridView();
             this.txtEdificio = new System.Windows.Forms.TextBox();
             this.txtAula = new System.Windows.Forms.TextBox();
             this.txtPiso = new System.Windows.Forms.TextBox();
             this.txtCmaxima = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAula)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -58,7 +53,7 @@
             this.btnSalir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(773, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(811, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -69,6 +64,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 24);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // btnEditar
             // 
@@ -77,7 +73,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(72, 24);
             this.btnEditar.Text = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
             // 
             // Eliminar
             // 
@@ -86,6 +82,7 @@
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(87, 24);
             this.Eliminar.Text = "Eliminar";
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // btnSalir
             // 
@@ -94,58 +91,19 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(62, 24);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
-            // dataGridView1
+            // dgvAula
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.edificio,
-            this.Aaula,
-            this.piso,
-            this.CapacidadMaxima});
-            this.dataGridView1.Location = new System.Drawing.Point(25, 58);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(719, 227);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // edificio
-            // 
-            this.edificio.HeaderText = "Edificio";
-            this.edificio.MinimumWidth = 6;
-            this.edificio.Name = "edificio";
-            this.edificio.Width = 125;
-            // 
-            // Aaula
-            // 
-            this.Aaula.HeaderText = "Aula";
-            this.Aaula.MinimumWidth = 6;
-            this.Aaula.Name = "Aaula";
-            this.Aaula.Width = 125;
-            // 
-            // piso
-            // 
-            this.piso.HeaderText = "Piso";
-            this.piso.MinimumWidth = 6;
-            this.piso.Name = "piso";
-            this.piso.Width = 125;
-            // 
-            // CapacidadMaxima
-            // 
-            this.CapacidadMaxima.HeaderText = "Capacidad Máxima";
-            this.CapacidadMaxima.MinimumWidth = 6;
-            this.CapacidadMaxima.Name = "CapacidadMaxima";
-            this.CapacidadMaxima.Width = 125;
+            this.dgvAula.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvAula.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAula.Location = new System.Drawing.Point(25, 58);
+            this.dgvAula.Name = "dgvAula";
+            this.dgvAula.RowHeadersWidth = 51;
+            this.dgvAula.RowTemplate.Height = 24;
+            this.dgvAula.Size = new System.Drawing.Size(759, 227);
+            this.dgvAula.TabIndex = 1;
+            this.dgvAula.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAula_CellContentClick);
             // 
             // txtEdificio
             // 
@@ -184,18 +142,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(773, 450);
+            this.ClientSize = new System.Drawing.Size(811, 450);
             this.Controls.Add(this.txtCmaxima);
             this.Controls.Add(this.txtPiso);
             this.Controls.Add(this.txtAula);
             this.Controls.Add(this.txtEdificio);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvAula);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Aula";
             this.Text = "Aula";
+            this.Load += new System.EventHandler(this.Aula_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAula)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,12 +167,7 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton Eliminar;
         private System.Windows.Forms.ToolStripButton btnSalir;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn edificio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Aaula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn piso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CapacidadMaxima;
+        private System.Windows.Forms.DataGridView dgvAula;
         private System.Windows.Forms.TextBox txtEdificio;
         private System.Windows.Forms.TextBox txtAula;
         private System.Windows.Forms.TextBox txtPiso;
