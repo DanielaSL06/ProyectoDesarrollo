@@ -61,7 +61,7 @@
             this.btnReinscripcion});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(934, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(968, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -72,6 +72,7 @@
             this.btnMateria.Name = "btnMateria";
             this.btnMateria.Size = new System.Drawing.Size(84, 24);
             this.btnMateria.Text = "Materia";
+            this.btnMateria.Click += new System.EventHandler(this.btnMateria_Click);
             // 
             // btnAula
             // 
@@ -80,6 +81,7 @@
             this.btnAula.Name = "btnAula";
             this.btnAula.Size = new System.Drawing.Size(63, 24);
             this.btnAula.Text = "Aula";
+            this.btnAula.Click += new System.EventHandler(this.btnAula_Click);
             // 
             // btnAcademico
             // 
@@ -88,6 +90,7 @@
             this.btnAcademico.Name = "btnAcademico";
             this.btnAcademico.Size = new System.Drawing.Size(108, 24);
             this.btnAcademico.Text = "Académico";
+            this.btnAcademico.Click += new System.EventHandler(this.btnAcademico_Click);
             // 
             // btnAlumno
             // 
@@ -96,6 +99,7 @@
             this.btnAlumno.Name = "btnAlumno";
             this.btnAlumno.Size = new System.Drawing.Size(85, 24);
             this.btnAlumno.Text = "Alumno";
+            this.btnAlumno.Click += new System.EventHandler(this.btnAlumno_Click);
             // 
             // btnCarrera
             // 
@@ -104,6 +108,7 @@
             this.btnCarrera.Name = "btnCarrera";
             this.btnCarrera.Size = new System.Drawing.Size(81, 24);
             this.btnCarrera.Text = "Carrera";
+            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click);
             // 
             // btnCiudad
             // 
@@ -112,6 +117,7 @@
             this.btnCiudad.Name = "btnCiudad";
             this.btnCiudad.Size = new System.Drawing.Size(80, 24);
             this.btnCiudad.Text = "Ciudad";
+            this.btnCiudad.Click += new System.EventHandler(this.btnCiudad_Click);
             // 
             // btnEstado
             // 
@@ -120,6 +126,7 @@
             this.btnEstado.Name = "btnEstado";
             this.btnEstado.Size = new System.Drawing.Size(78, 24);
             this.btnEstado.Text = "Estado";
+            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
             // 
             // btnPais
             // 
@@ -128,6 +135,7 @@
             this.btnPais.Name = "btnPais";
             this.btnPais.Size = new System.Drawing.Size(58, 24);
             this.btnPais.Text = "País";
+            this.btnPais.Click += new System.EventHandler(this.btnPais_Click);
             // 
             // btnEstatus
             // 
@@ -136,6 +144,7 @@
             this.btnEstatus.Name = "btnEstatus";
             this.btnEstatus.Size = new System.Drawing.Size(79, 24);
             this.btnEstatus.Text = "Estatus";
+            this.btnEstatus.Click += new System.EventHandler(this.btnEstatus_Click);
             // 
             // btnGrupo
             // 
@@ -144,6 +153,7 @@
             this.btnGrupo.Name = "btnGrupo";
             this.btnGrupo.Size = new System.Drawing.Size(74, 24);
             this.btnGrupo.Text = "Grupo";
+            this.btnGrupo.Click += new System.EventHandler(this.btnGrupo_Click);
             // 
             // btnReinscripcion
             // 
@@ -152,6 +162,7 @@
             this.btnReinscripcion.Name = "btnReinscripcion";
             this.btnReinscripcion.Size = new System.Drawing.Size(121, 24);
             this.btnReinscripcion.Text = "Reinscripción";
+            this.btnReinscripcion.Click += new System.EventHandler(this.btnReinscripcion_Click);
             // 
             // Form1
             // 
@@ -160,11 +171,10 @@
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(934, 517);
+            this.ClientSize = new System.Drawing.Size(968, 517);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "Página Principal";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
