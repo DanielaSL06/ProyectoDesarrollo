@@ -34,15 +34,12 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.siglas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCiudad = new System.Windows.Forms.DataGridView();
             this.txtNombreCiudad = new System.Windows.Forms.TextBox();
             this.txtSiglasCiudad = new System.Windows.Forms.TextBox();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCiudad)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -66,6 +63,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 24);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -74,6 +72,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(72, 24);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -82,6 +81,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(87, 24);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -90,50 +90,20 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(62, 24);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dataGridView1
+            // dgvCiudad
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.nombre,
-            this.siglas,
-            this.id_estado});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(588, 298);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 125;
-            // 
-            // siglas
-            // 
-            this.siglas.HeaderText = "Siglas";
-            this.siglas.MinimumWidth = 6;
-            this.siglas.Name = "siglas";
-            this.siglas.Width = 125;
-            // 
-            // id_estado
-            // 
-            this.id_estado.HeaderText = "ID Estado";
-            this.id_estado.MinimumWidth = 6;
-            this.id_estado.Name = "id_estado";
-            this.id_estado.Width = 125;
+            this.dgvCiudad.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvCiudad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCiudad.Location = new System.Drawing.Point(12, 41);
+            this.dgvCiudad.Name = "dgvCiudad";
+            this.dgvCiudad.RowHeadersWidth = 51;
+            this.dgvCiudad.RowTemplate.Height = 24;
+            this.dgvCiudad.Size = new System.Drawing.Size(588, 298);
+            this.dgvCiudad.TabIndex = 1;
+            this.dgvCiudad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCiudad_CellContentClick);
+            this.dgvCiudad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCiudad_CellContentClick);
             // 
             // txtNombreCiudad
             // 
@@ -145,11 +115,19 @@
             // 
             // txtSiglasCiudad
             // 
-            this.txtSiglasCiudad.Location = new System.Drawing.Point(402, 382);
+            this.txtSiglasCiudad.Location = new System.Drawing.Point(243, 382);
             this.txtSiglasCiudad.Name = "txtSiglasCiudad";
             this.txtSiglasCiudad.Size = new System.Drawing.Size(100, 22);
             this.txtSiglasCiudad.TabIndex = 3;
             this.txtSiglasCiudad.Text = "Siglas";
+            // 
+            // cbEstado
+            // 
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Location = new System.Drawing.Point(430, 382);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(123, 24);
+            this.cbEstado.TabIndex = 4;
             // 
             // Ciudad
             // 
@@ -157,15 +135,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(626, 450);
+            this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.txtSiglasCiudad);
             this.Controls.Add(this.txtNombreCiudad);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCiudad);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Ciudad";
             this.Text = "Ciudad";
+            this.Load += new System.EventHandler(this.Ciudad_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCiudad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,12 +158,9 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnSalir;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn siglas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_estado;
+        private System.Windows.Forms.DataGridView dgvCiudad;
         private System.Windows.Forms.TextBox txtNombreCiudad;
         private System.Windows.Forms.TextBox txtSiglasCiudad;
+        private System.Windows.Forms.ComboBox cbEstado;
     }
 }

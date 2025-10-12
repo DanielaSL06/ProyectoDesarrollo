@@ -34,14 +34,11 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPais = new System.Windows.Forms.DataGridView();
             this.txtNombrePais = new System.Windows.Forms.TextBox();
             this.txtSiglaPais = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPais)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -65,6 +62,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 24);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -73,6 +71,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(72, 24);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -81,6 +80,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(87, 24);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -89,42 +89,20 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(62, 24);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dataGridView1
+            // dgvPais
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.nombre,
-            this.sigla});
-            this.dataGridView1.Location = new System.Drawing.Point(23, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(464, 312);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 125;
-            // 
-            // sigla
-            // 
-            this.sigla.HeaderText = "Sigla";
-            this.sigla.MinimumWidth = 6;
-            this.sigla.Name = "sigla";
-            this.sigla.Width = 125;
+            this.dgvPais.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvPais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPais.Location = new System.Drawing.Point(23, 47);
+            this.dgvPais.Name = "dgvPais";
+            this.dgvPais.RowHeadersWidth = 51;
+            this.dgvPais.RowTemplate.Height = 24;
+            this.dgvPais.Size = new System.Drawing.Size(464, 312);
+            this.dgvPais.TabIndex = 1;
+            this.dgvPais.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPais_CellContentClick);
+            this.dgvPais.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPais_CellContentClick);
             // 
             // txtNombrePais
             // 
@@ -142,7 +120,7 @@
             this.txtSiglaPais.TabIndex = 3;
             this.txtSiglaPais.Text = "Sigla";
             // 
-            // País
+            // Pais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,13 +128,14 @@
             this.ClientSize = new System.Drawing.Size(543, 510);
             this.Controls.Add(this.txtSiglaPais);
             this.Controls.Add(this.txtNombrePais);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPais);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "País";
+            this.Name = "Pais";
             this.Text = "País";
+            this.Load += new System.EventHandler(this.Pais_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPais)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,10 +148,7 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnSalir;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sigla;
+        private System.Windows.Forms.DataGridView dgvPais;
         private System.Windows.Forms.TextBox txtNombrePais;
         private System.Windows.Forms.TextBox txtSiglaPais;
     }

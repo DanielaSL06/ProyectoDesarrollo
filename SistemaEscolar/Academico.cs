@@ -23,10 +23,11 @@ namespace SistemaEscolar
             InitializeComponent();
         }
 
-        private void Academico_Load(object sender, EventArgs e)
+        private void Academico_Load_1(object sender, EventArgs e)
         {
             CargarAcademicos();
         }
+        
 
         private void CargarAcademicos()
         {
@@ -164,5 +165,7 @@ namespace SistemaEscolar
                 txtGradoAcademico.Text = fila.Cells["grado"].Value.ToString();
             }
         }
+
+        
     }
 }
