@@ -13,12 +13,12 @@ namespace SistemaEscolar
 {
     public partial class Form1 : Form
     {
-        public string ConexionCatalogos = "Server=DAVID\\SQLEXPRESS;"
+        public string ConexionCatalogos = "Server=DANIFLOW\\SQLEXPRESS;"
                             + " Database=Catalogos;"
                             + " Integrated Security=True; "
                             + " TrustServerCertificate=True";
 
-        public string ConexionTablas = "Server=DAVID\\SQLEXPRESS;"
+        public string ConexionTablas = "Server=DANIFLOW\\SQLEXPRESS;"
                             + " Database=Tablas;"
                             + " Integrated Security=True; "
                             + " TrustServerCertificate=True";

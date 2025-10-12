@@ -34,16 +34,12 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.claveEstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvEstatus = new System.Windows.Forms.DataGridView();
             this.txtClaveEstatus = new System.Windows.Forms.TextBox();
             this.txtNombreEstatus = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstatus)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -67,6 +63,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 24);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -75,6 +72,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(72, 24);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -83,6 +81,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(87, 24);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -91,50 +90,19 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(62, 24);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dataGridView1
+            // dgvEstatus
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.claveEstatus,
-            this.nombre,
-            this.usuario});
-            this.dataGridView1.Location = new System.Drawing.Point(24, 61);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(565, 290);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // claveEstatus
-            // 
-            this.claveEstatus.HeaderText = "Clave";
-            this.claveEstatus.MinimumWidth = 6;
-            this.claveEstatus.Name = "claveEstatus";
-            this.claveEstatus.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 125;
-            // 
-            // usuario
-            // 
-            this.usuario.HeaderText = "Usuario";
-            this.usuario.MinimumWidth = 6;
-            this.usuario.Name = "usuario";
-            this.usuario.Width = 125;
+            this.dgvEstatus.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvEstatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstatus.Location = new System.Drawing.Point(24, 61);
+            this.dgvEstatus.Name = "dgvEstatus";
+            this.dgvEstatus.RowHeadersWidth = 51;
+            this.dgvEstatus.RowTemplate.Height = 24;
+            this.dgvEstatus.Size = new System.Drawing.Size(565, 290);
+            this.dgvEstatus.TabIndex = 1;
+            this.dgvEstatus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstatus_CellContentClick);
             // 
             // txtClaveEstatus
             // 
@@ -170,13 +138,14 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtNombreEstatus);
             this.Controls.Add(this.txtClaveEstatus);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvEstatus);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Estatus";
             this.Text = "Estatus";
+            this.Load += new System.EventHandler(this.Estatus_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,11 +158,7 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnSalir;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn claveEstatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridView dgvEstatus;
         private System.Windows.Forms.TextBox txtClaveEstatus;
         private System.Windows.Forms.TextBox txtNombreEstatus;
         private System.Windows.Forms.TextBox txtUsuario;

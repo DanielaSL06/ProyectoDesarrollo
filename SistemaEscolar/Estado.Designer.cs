@@ -95,6 +95,7 @@
             // 
             // dgvEstado
             // 
+            this.dgvEstado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvEstado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEstado.Location = new System.Drawing.Point(12, 47);
             this.dgvEstado.Name = "dgvEstado";
@@ -134,13 +135,14 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(534, 372);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 5;
             // 
             // Estado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(624, 496);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbIDPais);
