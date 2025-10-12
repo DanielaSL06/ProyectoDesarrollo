@@ -142,6 +142,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Academico";
             this.Text = "Academico";
+            this.Load += new System.EventHandler(this.Academico_Load_1);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAcademico)).EndInit();
