@@ -55,7 +55,7 @@
             this.btnSalir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(624, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(624, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -64,7 +64,7 @@
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(87, 28);
+            this.btnAgregar.Size = new System.Drawing.Size(87, 24);
             this.btnAgregar.Text = "Agregar";
             // 
             // btnEditar
@@ -72,7 +72,7 @@
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(72, 28);
+            this.btnEditar.Size = new System.Drawing.Size(72, 24);
             this.btnEditar.Text = "Editar";
             // 
             // btnEliminar
@@ -80,7 +80,7 @@
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(87, 28);
+            this.btnEliminar.Size = new System.Drawing.Size(87, 24);
             this.btnEliminar.Text = "Eliminar";
             // 
             // btnSalir
@@ -88,11 +88,12 @@
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(62, 28);
+            this.btnSalir.Size = new System.Drawing.Size(62, 24);
             this.btnSalir.Text = "Salir";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -154,6 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(624, 496);
             this.Controls.Add(this.txtSigla);
             this.Controls.Add(this.txtNombreEstado);
