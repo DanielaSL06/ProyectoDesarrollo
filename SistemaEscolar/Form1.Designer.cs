@@ -61,7 +61,7 @@
             this.btnReinscripcion});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(968, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1159, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -148,6 +148,7 @@
             // 
             // btnGrupo
             // 
+            this.btnGrupo.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnGrupo.Image")));
             this.btnGrupo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGrupo.Name = "btnGrupo";
@@ -157,6 +158,7 @@
             // 
             // btnReinscripcion
             // 
+            this.btnReinscripcion.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnReinscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnReinscripcion.Image")));
             this.btnReinscripcion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnReinscripcion.Name = "btnReinscripcion";
@@ -171,10 +173,11 @@
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(968, 517);
+            this.ClientSize = new System.Drawing.Size(1159, 546);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "Página Principal";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
