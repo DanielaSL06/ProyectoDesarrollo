@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaEscolar
 {
-    public partial class País : Form
+    public partial class Pais : Form
     {
-        public País()
+        public Pais()
         {
             InitializeComponent();
         }

@@ -34,14 +34,11 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Creditos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMaterias = new System.Windows.Forms.DataGridView();
             this.txtNombreMateria = new System.Windows.Forms.TextBox();
             this.txtCreditos = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -65,6 +62,7 @@
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 24);
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEditar
             // 
@@ -73,7 +71,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(72, 24);
             this.btnEditar.Text = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -82,6 +80,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(87, 24);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -90,42 +89,19 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(62, 24);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // dataGridView1
+            // dgvMaterias
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nombre,
-            this.Creditos});
-            this.dataGridView1.Location = new System.Drawing.Point(22, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(515, 240);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
-            // 
-            // Creditos
-            // 
-            this.Creditos.HeaderText = "Créditos";
-            this.Creditos.MinimumWidth = 6;
-            this.Creditos.Name = "Creditos";
-            this.Creditos.Width = 125;
+            this.dgvMaterias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterias.Location = new System.Drawing.Point(22, 43);
+            this.dgvMaterias.Name = "dgvMaterias";
+            this.dgvMaterias.RowHeadersWidth = 51;
+            this.dgvMaterias.RowTemplate.Height = 24;
+            this.dgvMaterias.Size = new System.Drawing.Size(515, 240);
+            this.dgvMaterias.TabIndex = 1;
+            this.dgvMaterias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterias_CellClick);
             // 
             // txtNombreMateria
             // 
@@ -151,13 +127,14 @@
             this.ClientSize = new System.Drawing.Size(578, 452);
             this.Controls.Add(this.txtCreditos);
             this.Controls.Add(this.txtNombreMateria);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMaterias);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Materia";
             this.Text = "Materia";
+            this.Load += new System.EventHandler(this.Materia_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,10 +147,7 @@
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnSalir;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Creditos;
+        private System.Windows.Forms.DataGridView dgvMaterias;
         private System.Windows.Forms.TextBox txtNombreMateria;
         private System.Windows.Forms.TextBox txtCreditos;
     }

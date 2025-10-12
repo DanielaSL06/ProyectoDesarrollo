@@ -1,6 +1,6 @@
 ﻿namespace SistemaEscolar
 {
-    partial class País
+    partial class Pais
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(País));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pais));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
