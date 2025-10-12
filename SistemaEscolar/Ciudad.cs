@@ -14,7 +14,7 @@ namespace SistemaEscolar
     public partial class Ciudad : Form
     {
         // Conexión a la base de datos "Catalogos".
-        public string ConexionCatalogos = "Server=DAVID\\SQLEXPRESS;"
+        public string ConexionCatalogos = "Server=DANIFLOW\\SQLEXPRESS;"
                                        + " Database=Catalogos;"
                                        + " Integrated Security=True; "
                                        + " TrustServerCertificate=True";
